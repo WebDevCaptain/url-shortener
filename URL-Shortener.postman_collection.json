@@ -1,0 +1,65 @@
+{
+	"info": {
+		"_postman_id": "f553f20e-d362-484e-9a23-b9d1b0a34f72",
+		"name": "URL-Shortener",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST /api/store/url",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"bigUrl\": \"https://github.com/vercel/next.js/blob/canary/contributing.md\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/store/url",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"store",
+						"url"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /:shortCode",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/VK7sgBKN6",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"VK7sgBKN6"
+					]
+				},
+				"description": "Get the short URL from long URL"
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+    web:
+        build:
+            context: .
+            dockerfile: ./dev.Dockerfile
+        ports:
+            - "3000:3000"
+        volumes:
+            - .:/home/node/code
+            - /home/node/code/node_modules
+        links:
+            - db
+            - redis
+        environment:
+            MONGO_URI: mongodb://db:27017/url-shortener
+            PORT: 3000
+            BASE_URL: http://127.0.0.1:3000
+            REDIS_PORT: 6379
+            REDIS_HOST: redis
+        restart: on-failure
+    db:
+        image: mongo
+        ports:
+            - "27017:27017"
+    redis:
+        image: 'redis'
+

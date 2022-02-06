@@ -1,0 +1,5 @@
+node_modules/
+cleanup.txt
+playground/
+config/dev.env
+config/prod.env
